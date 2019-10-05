@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:radial_button/widget/circle_floating_button.dart';
+
+import 'float_button/float_button_widget.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -6,6 +9,7 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +19,8 @@ class _DashboardPageState extends State<DashboardPage> {
       body: Column(
         children: <Widget>[],
       ),
+      
+      floatingActionButton: FloatButtonWidget()
     );
   }
 }
