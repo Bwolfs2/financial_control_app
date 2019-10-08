@@ -9,3 +9,10 @@ git fetch upstream
 
 git merge upstream/master
 
+git add .
+
+git commit -m "update fork"
+
+git push
+
+
