@@ -17,7 +17,9 @@ class _DashboardPageState extends State<DashboardPage> {
         title: Text("Dashboard"),
       ),
       body: Column(
-        children: <Widget>[],
+        children: <Widget>[
+          Text("Teste");
+        ],
       ),
       
       floatingActionButton: FloatButtonWidget()
