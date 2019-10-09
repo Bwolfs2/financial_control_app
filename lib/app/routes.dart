@@ -16,6 +16,8 @@ class AppRoutes {
 
   onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case '/dashboard':
+        return CupertinoPageRoute(builder: (context) => DashboardModule());
       case '/despesas':
         return CupertinoPageRoute(builder: (context) => DespesasModule());
       case '/extrato':
