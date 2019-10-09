@@ -1,3 +1,4 @@
+import 'package:financial_control_app/app/shared/locale/locales.dart';
 import 'package:flutter/material.dart';
 
 class ReceitasPage extends StatefulWidget {
@@ -10,7 +11,7 @@ class _ReceitasPageState extends State<ReceitasPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Receitas"),
+        title: Text(AppLocale.of(context).getText("receitas")),
       ),
       body: Column(
         children: <Widget>[],

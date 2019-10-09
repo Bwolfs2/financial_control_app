@@ -1,18 +1,21 @@
-import 'package:financial_control_app/app/pages/despesas/despesas_module.dart';
-import 'package:financial_control_app/app/pages/extrato/extrato_module.dart';
-import 'package:financial_control_app/app/pages/receitas/receitas_module.dart';
-import 'package:financial_control_app/app/pages/transferencias/transferencias_module.dart';
+import 'package:financial_control_app/app/shared/locale/locales.dart';
 import 'package:flutter/material.dart';
 import 'package:radial_button/widget/circle_floating_button.dart';
 
 class FloatButtonWidget extends StatefulWidget {
+  final BuildContext buildContext;
+
+  const FloatButtonWidget({Key key,@required this.buildContext}) : super(key: key);
   @override
-  _FloatButtonWidgetState createState() => _FloatButtonWidgetState();
+  _FloatButtonWidgetState createState() =>
+      _FloatButtonWidgetState(buildContext);
 }
 
 class _FloatButtonWidgetState extends State<FloatButtonWidget> {
   final GlobalKey<CircleFloatingButtonState> key01 =
       GlobalKey<CircleFloatingButtonState>();
+  BuildContext buildContext;
+  _FloatButtonWidgetState(this.buildContext);
 
   fechar() {
     key01.currentState.close();
@@ -25,17 +28,10 @@ class _FloatButtonWidgetState extends State<FloatButtonWidget> {
     itemsActionBar = [
       FloatingActionButton(
         heroTag: UniqueKey(),
-        tooltip: "Extrato",
+        tooltip: AppLocale.of(buildContext).getText("extratos"),
         backgroundColor: Colors.orangeAccent,
-        onPressed: () async {
-          await Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) {
-                return ExtratoModule();
-              },
-              fullscreenDialog: true,
-            ),
-          );
+        onPressed: () {
+          Navigator.of(context).pushNamed("/extrato");
           fechar();
         },
         child: Icon(Icons.account_balance),
@@ -43,17 +39,10 @@ class _FloatButtonWidgetState extends State<FloatButtonWidget> {
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
-        tooltip: "Transferência",
+        tooltip: AppLocale.of(buildContext).getText("transferencias"),
         backgroundColor: Colors.blueAccent,
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) {
-                return TransferenciasModule();
-              },
-              fullscreenDialog: true,
-            ),
-          );
+          Navigator.of(context).pushNamed("/transferencias");
           fechar();
         },
         child: Icon(Icons.swap_vert),
@@ -61,17 +50,10 @@ class _FloatButtonWidgetState extends State<FloatButtonWidget> {
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
-        tooltip: "Receita",
+        tooltip: AppLocale.of(buildContext).getText("receitas"),
         backgroundColor: Colors.greenAccent,
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) {
-                return ReceitasModule();
-              },
-              fullscreenDialog: true,
-            ),
-          );
+          Navigator.of(context).pushNamed("/receitas");
           fechar();
         },
         child: Icon(Icons.add),
@@ -79,17 +61,10 @@ class _FloatButtonWidgetState extends State<FloatButtonWidget> {
       ),
       FloatingActionButton(
         heroTag: UniqueKey(),
-        tooltip: "Despesa",
+        tooltip: AppLocale.of(buildContext).getText("despesas"),
         backgroundColor: Colors.redAccent,
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) {
-                return DespesasModule();
-              },
-              fullscreenDialog: true,
-            ),
-          );
+          Navigator.of(context).pushNamed("/despesas");
           fechar();
         },
         child: Icon(Icons.remove),

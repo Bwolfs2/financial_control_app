@@ -1,3 +1,4 @@
+import 'package:financial_control_app/app/shared/locale/locales.dart';
 import 'package:flutter/material.dart';
 
 class ExtratoPage extends StatefulWidget {
@@ -10,7 +11,7 @@ class _ExtratoPageState extends State<ExtratoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Extrato"),
+        title: Text(AppLocale.of(context).getText("extratos")),
       ),
       body: Column(
         children: <Widget>[],

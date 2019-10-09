@@ -1,3 +1,4 @@
+import 'package:financial_control_app/app/shared/locale/locales.dart';
 import 'package:flutter/material.dart';
 
 import 'float_button/float_button_widget.dart';
@@ -13,13 +14,13 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dashboard"),
+        title: Text(AppLocale.of(context).getText("dashboard")),
       ),
       body: Column(
         children: <Widget>[],
       ),
       
-      floatingActionButton: FloatButtonWidget()
+      floatingActionButton: FloatButtonWidget(buildContext: context,)
     );
   }
 }
