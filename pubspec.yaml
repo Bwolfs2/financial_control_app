@@ -17,10 +17,13 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  find_dropdown: ^0.1.7+1
   radial_button: ^0.1.4
   dio: ^3.0.3
   rxdart: ^0.22.3
   bloc_pattern: ^2.3.4
+  flutter_localizations: 
+     sdk: flutter  
   flutter:
     sdk: flutter
 
