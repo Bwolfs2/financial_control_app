@@ -16,3 +16,8 @@ git commit -m "update fork"
 git push
 
 
+///Para rodar uma PR especifica
+
+git remote add upstream <url>
+git fetch upstream
+git checkout upstream/pr/<PR_NUMBER>
